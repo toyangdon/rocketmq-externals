@@ -11,8 +11,7 @@ branches:
   only:
     - master
 before_install:
-  - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
-#install: skip 
+  - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD 
 script: 
   - cd rocketmq-console 
   - mvn clean package -Dmaven.test.skip=true docker:build
