@@ -1,4 +1,4 @@
-FROM registry.ccyunchina.com/dev/base_java8_image:1.01
+FROM yangqiyong/jdk:1.8
 VOLUME /tmp
 ADD rocketmq-console-ng-*.jar rocketmq-console-ng.jar
 RUN sh -c 'touch /rocketmq-console-ng.jar'
