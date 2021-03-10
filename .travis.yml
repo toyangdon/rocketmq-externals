@@ -10,7 +10,7 @@ branches:
     - master
 before_install:
   - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
-  - sudo apt-get install maven -y
+  - sudo apt-get -y install maven
 script: 
   - cd rocketmq-console 
   - mvn clean package -Dmaven.test.skip=true docker:build
