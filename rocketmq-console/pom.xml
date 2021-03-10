@@ -67,7 +67,7 @@
         <surefire.version>2.19.1</surefire.version>
         <aspectj.version>1.8.10</aspectj.version>
         <main.basedir>${basedir}/../..</main.basedir>
-        <docker.image.prefix>apacherocketmq</docker.image.prefix>
+        <docker.image.prefix>toyangdon</docker.image.prefix>
         <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
     </properties>
 
