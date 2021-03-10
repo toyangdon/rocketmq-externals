@@ -1,21 +1,16 @@
-dist: trusty
-
-notifications:
-  email:
-    recipients:
-      - dev@rocketmq.apache.org
-  on_success: change
-  on_failure: always
-
 language: java
 jdk:
     - oraclejdk8
-    - oraclejdk9
-    - oraclejdk11
-    - openjdk8
+arch:
+  - arm64
+os:
+  - linux
+services:
+  - docker
 branches:
   only:
     - master
-env:
-  - TEST_DIR=rocketmq-console
-script: "cd $TEST_DIR && mvn clean package -Dmaven.test.skip=true"
+before_install:
+  - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
+install: skip 
+script: "cd rocketmq-console && -Dmaven.test.skip=true docker:build"
