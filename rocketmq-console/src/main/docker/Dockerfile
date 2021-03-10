@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM zmaxlwz/oraclejdk:8u281-linux-aarch64-ubuntu-20.04
 VOLUME /tmp
 ADD rocketmq-console-ng-*.jar rocketmq-console-ng.jar
 RUN sh -c 'touch /rocketmq-console-ng.jar'
