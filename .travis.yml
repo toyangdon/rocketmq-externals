@@ -13,4 +13,7 @@ before_install:
 script: 
   - cd rocketmq-console 
   - sudo apt-get -y install maven
-  - mvn clean package -Dmaven.test.skip=true docker:build
+  - mvn clean package -Dmaven.test.skip=true
+  - cp src/main/docker/Dockerfile target/
+  - cd target
+  - docker build -t toyangdon/rocketmq-console:4.5.0 .
