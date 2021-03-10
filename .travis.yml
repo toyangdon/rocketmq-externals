@@ -1,6 +1,4 @@
 language: java
-jdk:
-    - oraclejdk8
 arch:
   - arm64
 os:
@@ -11,7 +9,9 @@ branches:
   only:
     - master
 before_install:
-  - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD 
+  - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
+install:
+  - maven
 script: 
   - cd rocketmq-console 
   - mvn clean package -Dmaven.test.skip=true docker:build
