@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:8-alpine
 VOLUME /tmp
 ADD rocketmq-console-ng-*.jar rocketmq-console-ng.jar
 RUN sh -c 'touch /rocketmq-console-ng.jar'
